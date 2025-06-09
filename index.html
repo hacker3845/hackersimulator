@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulação de Acesso</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0d0d0d;
+      color: #00ff88;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 15px;
+      padding: 20px;
+    }
+
+    .titulo {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      color: #00ff88;
+      text-shadow: 0 0 8px #00ff88, 0 0 16px #00ff88;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    #terminal {
+      white-space: pre-line;
+      line-height: 1.5;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 16px;
+      background-color: #00ff88;
+      animation: blink 1s step-start infinite;
+      vertical-align: bottom;
+    }
+
+    #btn-container {
+      text-align: center;
+      margin-top: 40px;
+      display: none;
+    }
+
+    .btn-whatsapp {
+      background-color: transparent;
+      color: #00ff88;
+      border: 2px solid #00ff88;
+      padding: 12px 24px;
+      font-size: 16px;
+      text-decoration: none;
+      font-family: 'Courier New', Courier, monospace;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #00ff88;
+      color: #0d0d0d;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ff88;
+    }
+
+    @keyframes blink {
+      50% { background-color: transparent; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="titulo">HACKEANDO DISPOSITIVO</div>
+  <div id="terminal"></div><span class="cursor"></span>
+
+  <div id="btn-container">
+    <a href="https://wa.link/c63qvt" target="_blank" class="btn-whatsapp">Entrar em Contato</a>
+  </div>
+
+  <script>
+    const terminal = document.getElementById("terminal");
+    const btnContainer = document.getElementById("btn-container");
+
+    const linhas = [
+      "[ Iniciando conexão com dispositivo alvo... ]",
+      "[ Autenticando chave de sessão... OK ]",
+      "[ Bypass de segurança de aplicativo detectado... ]",
+      "[ Injeção silenciosa de payload em segundo plano... ]",
+      "[ Sessão estabelecida com sucesso ]",
+      "",
+      "[ Verificando aplicativos conectados à rede: ]",
+      "  ├─ WhatsApp",
+      "  ├─ Instagram",
+      "  └─ Facebook",
+      "",
+      "[ Iniciando captura de sessões ativas... ]",
+      "[ Sincronizando mensagens em tempo real... OK ]",
+      "[ Clonando tokens de acesso... concluído ]",
+      "",
+      "[ Dados extraídos: ]",
+      "  - Mensagens privadas (últimas 72h)",
+      "  - Mídia (fotos, vídeos, áudios)",
+      "  - Contatos sincronizados",
+      "",
+      "[ Criando canal seguro para monitoramento contínuo... ]",
+      "[ Encerrando interface do usuário ]",
+      "[ Processo concluído com sucesso. Nenhum alerta gerado. ]"
+    ];
+
+    let i = 0;
+
+    function digitarLinha() {
+      if (i < linhas.length) {
+        const texto = linhas[i];
+        let j = 0;
+        const intervalo = setInterval(() => {
+          terminal.innerHTML += texto.charAt(j);
+          j++;
+          if (j >= texto.length) {
+            clearInterval(intervalo);
+            terminal.innerHTML += "\n";
+            i++;
+            setTimeout(digitarLinha, 400);
+          }
+        }, 25);
+      } else {
+        // Mostrar botão após a última linha
+        document.querySelector('.cursor').style.display = 'none';
+        btnContainer.style.display = 'block';
+      }
+    }
+
+    digitarLinha();
+  </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulação de Acesso</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0d0d0d;
+      color: #00ff88;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 15px;
+      padding: 20px;
+    }
+
+    .titulo {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      color: #00ff88;
+      text-shadow: 0 0 8px #00ff88, 0 0 16px #00ff88;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    #terminal {
+      white-space: pre-line;
+      line-height: 1.5;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 16px;
+      background-color: #00ff88;
+      animation: blink 1s step-start infinite;
+      vertical-align: bottom;
+    }
+
+    #btn-container {
+      text-align: center;
+      margin-top: 40px;
+      display: none;
+    }
+
+    .btn-whatsapp {
+      background-color: transparent;
+      color: #00ff88;
+      border: 2px solid #00ff88;
+      padding: 12px 24px;
+      font-size: 16px;
+      text-decoration: none;
+      font-family: 'Courier New', Courier, monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #00ff88;
+      color: #0d0d0d;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ff88;
+    }
+
+    @keyframes blink {
+      50% { background-color: transparent; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="titulo"> </div>
+  <div id="terminal"></div><span class="cursor"></span>
+
+  <div id="btn-container">
+    <a href="https://wa.link/c63qvt" target="_blank" class="btn-whatsapp">RECEBER DADOS DA VÍTIMA</a>
+  </div>
+
+  <script>
+    const terminal = document.getElementById("terminal");
+    const btnContainer = document.getElementById("btn-container");
+
+    const linhas = [
+      "[ Iniciando conexão com dispositivo alvo... ]",
+      "[ Autenticando chave de sessão... OK ]",
+      "[ Bypass de segurança de aplicativo detectado... ]",
+      "[ Injeção silenciosa de payload em segundo plano... ]",
+      "[ Sessão estabelecida com sucesso ]",
+      "",
+      "[ Verificando aplicativos conectados à rede: ]",
+      "  ├─ WhatsApp",
+      "  ├─ Instagram",
+      "  └─ Facebook",
+      "",
+      "[ Iniciando captura de sessões ativas... ]",
+      "[ Sincronizando mensagens em tempo real... OK ]",
+      "[ Clonando tokens de acesso... concluído ]",
+      "",
+      "[ Dados extraídos: ]",
+      "  - Mensagens privadas (últimas 72h)",
+      "  - Mídia (fotos, vídeos, áudios)",
+      "  - Contatos sincronizados",
+      "",
+      "[ Criando canal seguro para monitoramento contínuo... ]",
+      "[ Encerrando interface do usuário ]",
+      "[ Processo concluído com sucesso. Nenhum alerta gerado. ]"
+    ];
+
+    let i = 0;
+
+    function digitarLinha() {
+      if (i < linhas.length) {
+        const texto = linhas[i];
+        let j = 0;
+        const intervalo = setInterval(() => {
+          terminal.innerHTML += texto.charAt(j);
+          j++;
+          if (j >= texto.length) {
+            clearInterval(intervalo);
+            terminal.innerHTML += "\n";
+            i++;
+            setTimeout(digitarLinha, 400);
+          }
+        }, 25);
+      } else {
+        // Mostrar botão após a última linha
+        document.querySelector('.cursor').style.display = 'none';
+        btnContainer.style.display = 'block';
+      }
+    }
+
+    digitarLinha();
+  </script>
+
+</body>
+</html>
